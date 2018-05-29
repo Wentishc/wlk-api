@@ -1,0 +1,52 @@
+commonproperty: #自定义的属性和值    
+  wlkBaseUrl: http://183.230.96.66:8087/v2/
+  appid: GHR43VNE3S64GX
+  passwd: KSTYX51js
+
+server:
+  port: 8099
+  tomcat.uri-encoding: UTF-8
+    
+    
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: ou.com.resmed.beans
+
+spring:
+    thymeleaf:
+        prefix: classpath:/templates/
+        suffix: .html
+        mode: HTML5
+        cache: false
+    profiles:
+        active: test
+    datasource:
+        name: wlk
+        url: jdbc:mysql:loadbalance://192.168.2.106:3306,192.168.2.108:3306/ccmp?failOverReadOnly=false&autoReconnect=true&roundRobinLoadBalance=true&useSSL=true
+        username: root
+        password: test
+        driver-class-name: com.mysql.jdbc.Driver
+#        filters: stat
+#        maxActive: 20
+#        initialSize: 1
+#        maxWait: 60000
+#        minIdle: 1
+#        timeBetweenEvictionRunsMillis: 60000
+#        minEvictableIdleTimeMillis: 300000
+#        validationQuery: select 'x'
+#        testWhileIdle: true
+#        testOnBorrow: false
+#        testOnReturn: false
+#        poolPreparedStatements: true
+#        maxOpenPreparedStatements: 20
+
+#pagehelper分页插件
+#pagehelper:
+#    helperDialect: mysql
+#    reasonable: true
+#    supportMethodsArguments: true
+#    params: count=countSql
+
+
+
+
